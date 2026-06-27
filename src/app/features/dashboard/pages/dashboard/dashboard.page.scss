@@ -1,0 +1,38 @@
+@use 'abstracts/functions' as fn;
+@use 'abstracts/variables' as vars;
+
+.dashboard-page {
+  display: grid;
+  min-height: 100%;
+  padding: vars.$size-xl;
+  background: var(--color-background);
+
+  &__content {
+    display: grid;
+    gap: vars.$size-sm;
+    align-content: start;
+    padding: vars.$size-xl;
+    border: fn.pxToRem(1) solid var(--color-border);
+    border-radius: vars.$radius-xl;
+    background: var(--color-surface);
+  }
+
+  &__eyebrow {
+    margin: 0;
+    color: var(--color-primary);
+    font-size: fn.pxToRem(14);
+    font-weight: 600;
+    letter-spacing: fn.pxToRem(0.6);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--color-heading);
+  }
+
+  &__description {
+    margin: 0;
+    color: var(--color-text-secondary);
+  }
+}

@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+@use 'abstracts/constants' as constants;
+
+@function pxToRem($value) {
+  @return math.div($value, constants.$root-font-size) * 1rem;
+}
+
+@function stripUnit($value) {
+  @return math.div($value, $value * 0 + 1);
+}

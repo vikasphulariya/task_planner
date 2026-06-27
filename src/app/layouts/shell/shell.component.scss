@@ -1,0 +1,38 @@
+@use 'abstracts/mixins' as mixins;
+
+:host {
+  display: block;
+  min-height: 100dvh;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+
+  background: var(--color-background);
+  color: var(--color-text-primary);
+
+  &__header {
+    flex-shrink: 0;
+  }
+
+  &__body {
+    @include mixins.flex(row);
+
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  &__sidebar {
+    flex-shrink: 0;
+  }
+
+  &__main {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+  }
+}

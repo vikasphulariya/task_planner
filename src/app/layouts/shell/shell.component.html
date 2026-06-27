@@ -1,0 +1,15 @@
+<div class="app-shell">
+  <header class="app-shell__header">
+    <ng-content select="[header]"></ng-content>
+  </header>
+
+  <div class="app-shell__body">
+    <aside class="app-shell__sidebar">
+      <ng-content select="[sidebar]"></ng-content>
+    </aside>
+
+    <main class="app-shell__main">
+      <router-outlet />
+    </main>
+  </div>
+</div>

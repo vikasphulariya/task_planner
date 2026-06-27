@@ -1,0 +1,63 @@
+:root {
+  /* Brand */
+  --color-primary: #5577ff;
+  --color-primary-soft: rgb(85 119 255 / 30%);
+  --color-on-primary: #faf9ff;
+
+  /* App Background */
+  --color-background: #f9f8ff;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f9f8ff;
+  --color-surface-muted: #f7f6fb;
+
+  /* Borders */
+  --color-border: #e6e4f0;
+  --color-border-soft: #efedf7;
+
+  /* Text */
+  --color-text-primary: #56555c;
+  --color-text-secondary: #82808f;
+  --color-text-muted: #9896a3;
+  --color-text-subtle: #bbbabe;
+  --color-text-disabled: #d3d2dc;
+  --color-heading: #000000;
+  --color-description: #999999;
+
+  /* Sidebar */
+  --color-sidebar-background: #ffffff;
+  --color-sidebar-border: #e6e4f0;
+  --color-sidebar-item: #9896a3;
+  --color-sidebar-item-active: #f5fffc;
+  --color-sidebar-item-active-bg: #5577ff;
+
+  /* Cards */
+  --color-card-background: #ffffff;
+  --color-card-border: #e6e4f0;
+  --color-card-muted: #e9e8ec;
+
+  /* Status */
+  --color-success: #00b884;
+  --color-success-soft: rgb(0 184 132 / 30%);
+  --color-danger: #fd71af;
+  --color-danger-soft: rgb(253 113 175 / 30%);
+  --color-purple: #7b68ee;
+  --color-purple-soft: rgb(123 104 238 / 30%);
+  --color-info: #49ccf9;
+  --color-info-soft: rgb(73 204 249 / 30%);
+  --color-warning: #ffc800;
+  --color-warning-soft: rgb(255 200 0 / 30%);
+
+  /* Neutral */
+  --color-neutral-100: #f5fffc;
+  --color-neutral-200: #e9e8ec;
+  --color-neutral-300: #bbbabe;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #9d9ba1;
+  --color-neutral-600: #76747a;
+  --color-neutral-700: #4f4f4f;
+  --color-neutral-900: #000000;
+
+  /* Labels / Chips */
+  --color-chip-background: #e9e8ec;
+  --color-chip-text: #9d9ba1;
+}
