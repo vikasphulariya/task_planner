@@ -1,0 +1,46 @@
+@use 'abstracts/functions' as fn;
+@use 'abstracts/variables' as vars;
+
+.not-found-page {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding: vars.$size-xl;
+  background: var(--color-background);
+
+  &__content {
+    display: grid;
+    gap: vars.$size-sm;
+    justify-items: start;
+    width: min(100%, fn.pxToRem(520));
+    padding: vars.$size-xl;
+    border: fn.pxToRem(1) solid var(--color-border);
+    border-radius: vars.$radius-xl;
+    background: var(--color-surface);
+    box-shadow: vars.$shadow-card;
+  }
+
+  &__code {
+    margin: 0;
+    color: var(--color-primary);
+    font-size: fn.pxToRem(14);
+    font-weight: 700;
+    letter-spacing: fn.pxToRem(1.2);
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--color-heading);
+  }
+
+  &__description {
+    margin: 0;
+    color: var(--color-text-secondary);
+  }
+
+  &__link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+}

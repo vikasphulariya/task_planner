@@ -46,6 +46,34 @@ Application typography.
 
 ---
 
+# Styling Guidelines
+
+- Use CSS variables for colors.
+- Use SCSS variables for reusable sizing tokens.
+- Always use `pxToRem()`.
+- Use namespaces with `@use`.
+- Prefer semantic variable names.
+- Component styles should consume shared variables instead of defining new design tokens.
+
+Examples
+
+```scss
+@use 'abstracts/functions' as fn;
+@use 'abstracts/variables' as vars;
+@use 'abstracts/mixins' as mixins;
+```
+
+Rules
+
+- Do not use `@import`
+- Do not use `@use ... as *`
+- Do not add colors to `_variables.scss`
+- Do not hardcode `px` values outside `_constants.scss` and `pxToRem()` calls
+
+Color tokens live in theme files as CSS custom properties, while sizing tokens live in SCSS variables. This keeps theming runtime-switchable without recompiling styles.
+
+---
+
 # Development Tools
 
 ## ESLint

@@ -83,6 +83,38 @@ See `docs/architecture.md` for the complete explanation.
 
 ---
 
+## Styling Architecture
+
+All shared styling lives in `src/app/shared/styles`.
+
+```text
+styles/
+├── abstracts/
+│   ├── _constants.scss
+│   ├── _functions.scss
+│   ├── _variables.scss
+│   ├── _typography.scss
+│   ├── _mixins.scss
+│   └── _index.scss
+├── base/
+│   ├── _reset.scss
+│   ├── _globals.scss
+│   └── _index.scss
+├── themes/
+│   ├── _light.scss
+│   ├── _dark.scss
+│   └── _index.scss
+└── index.scss
+```
+
+- `abstracts/` contains compile-time SCSS constants, functions, variables, typography, and mixins.
+- `base/` contains the browser reset and application-wide global defaults only.
+- `themes/` contains runtime color tokens exposed as CSS custom properties.
+
+The project uses Angular `stylePreprocessorOptions`, so shared style imports use include paths such as `@use 'abstracts/functions' as fn;` and `@use 'themes';`.
+
+---
+
 ## Getting Started
 
 Install dependencies
