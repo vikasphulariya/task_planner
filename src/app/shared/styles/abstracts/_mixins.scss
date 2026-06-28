@@ -6,8 +6,8 @@
   gap: $gap;
 }
 
-@mixin flex-center {
-  display: flex;
+@mixin flex-center($display: flex) {
+  display: $display;
   justify-content: center;
   align-items: center;
 }

@@ -1,0 +1,210 @@
+@use 'abstracts/functions' as fn;
+@use 'abstracts/typography' as type;
+@use 'abstracts/variables' as vars;
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.autocomplete {
+  --mat-form-field-outlined-container-shape: #{vars.$radius-pill};
+  --mat-form-field-outlined-outline-color: var(--color-border);
+  --mat-form-field-outlined-outline-width: #{fn.pxToRem(1)};
+  --mat-form-field-outlined-hover-outline-color: var(--color-success);
+  --mat-form-field-outlined-focus-outline-color: var(--color-success);
+  --mat-form-field-outlined-focus-outline-width: #{fn.pxToRem(2)};
+  --mat-form-field-outlined-disabled-outline-color: var(--color-border-soft);
+  --mat-form-field-outlined-error-outline-color: var(--color-danger);
+  --mat-form-field-outlined-error-hover-outline-color: var(--color-danger);
+  --mat-form-field-outlined-error-focus-outline-color: var(--color-danger);
+  --mat-form-field-outlined-label-text-color: var(--color-text-secondary);
+  --mat-form-field-outlined-hover-label-text-color: var(--color-text-primary);
+  --mat-form-field-outlined-focus-label-text-color: var(--color-success);
+  --mat-form-field-outlined-disabled-label-text-color: var(--color-text-disabled);
+  --mat-form-field-outlined-error-label-text-color: var(--color-danger);
+  --mat-form-field-outlined-error-hover-label-text-color: var(--color-danger);
+  --mat-form-field-outlined-error-focus-label-text-color: var(--color-danger);
+  --mat-form-field-outlined-input-text-color: var(--color-heading);
+  --mat-form-field-outlined-input-text-placeholder-color: var(--color-text-secondary);
+  --mat-form-field-outlined-caret-color: var(--color-success);
+  --mat-form-field-outlined-error-caret-color: var(--color-danger);
+  --mat-form-field-outlined-disabled-input-text-color: var(--color-text-disabled);
+  --mat-form-field-disabled-input-text-placeholder-color: var(--color-text-disabled);
+  --mat-form-field-leading-icon-color: var(--color-text-muted);
+  --mat-form-field-trailing-icon-color: var(--color-text-secondary);
+  --mat-form-field-disabled-leading-icon-color: var(--color-text-disabled);
+  --mat-form-field-disabled-trailing-icon-color: var(--color-text-disabled);
+  --mat-form-field-error-trailing-icon-color: var(--color-danger);
+  --mat-form-field-error-hover-trailing-icon-color: var(--color-danger);
+  --mat-form-field-error-focus-trailing-icon-color: var(--color-danger);
+  --mat-form-field-container-text-size: #{fn.pxToRem(16)};
+  --mat-form-field-container-text-line-height: #{fn.pxToRem(20)};
+  --mat-form-field-container-text-weight: #{type.$font-weight-medium};
+  --mat-form-field-outlined-label-text-size: #{fn.pxToRem(14)};
+  --mat-form-field-outlined-label-text-populated-size: #{fn.pxToRem(14)};
+  --mat-form-field-container-height: #{fn.pxToRem(56)};
+  --mat-form-field-container-vertical-padding: #{fn.pxToRem(16)};
+  --mat-autocomplete-container-shape: #{vars.$radius-xl};
+  --mat-autocomplete-background-color: var(--color-surface);
+  --mat-autocomplete-container-elevation-shadow: #{vars.$shadow-card};
+
+  width: 100%;
+}
+
+.autocomplete__prefix {
+  display: inline-flex;
+}
+
+.autocomplete__clear {
+  @include type.text-sm;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fn.pxToRem(28);
+  height: fn.pxToRem(28);
+  margin-right: vars.$size-sm;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition:
+    background-color vars.$transition-fast,
+    color vars.$transition-fast,
+    box-shadow vars.$transition-fast;
+
+  &:hover {
+    background-color: var(--color-border-soft);
+    color: var(--color-heading);
+  }
+
+  &:focus-visible {
+    outline: fn.pxToRem(2) solid var(--color-success);
+    outline-offset: fn.pxToRem(2);
+  }
+}
+
+:host ::ng-deep {
+  .autocomplete {
+    .mat-mdc-text-field-wrapper {
+      border-radius: vars.$radius-pill;
+      background-color: var(--color-surface);
+      overflow: hidden;
+      transition:
+        background-color vars.$transition-base,
+        box-shadow vars.$transition-base;
+    }
+
+    .mat-mdc-form-field-flex {
+      align-items: center;
+    }
+
+    .mat-mdc-form-field-icon-prefix,
+    .mat-mdc-form-field-icon-suffix {
+      align-self: center;
+      line-height: 0;
+    }
+
+    .mat-mdc-form-field-icon-prefix > .autocomplete__prefix {
+      margin-left: vars.$size-md;
+      margin-right: vars.$size-sm;
+    }
+
+    .mat-mdc-form-field-icon-suffix > .autocomplete__clear {
+      margin-left: vars.$size-xs;
+      margin-right: vars.$size-sm;
+    }
+
+    .mat-mdc-input-element {
+      @include type.text-md;
+
+      color: var(--color-heading);
+    }
+
+    .mat-mdc-input-element::placeholder {
+      color: var(--color-text-secondary);
+      opacity: 1;
+    }
+
+    .mdc-floating-label {
+      @include type.text-sm;
+      color: var(--color-text-secondary);
+    }
+
+    .mat-mdc-form-field-hint,
+    .mat-mdc-form-field-error {
+      @include type.text-sm;
+    }
+
+    &:hover {
+      .mat-mdc-text-field-wrapper {
+        background-color: var(--color-neutral-100);
+      }
+    }
+
+    &.mat-focused {
+      .mat-mdc-text-field-wrapper {
+        box-shadow: 0 0 0 fn.pxToRem(4) var(--color-success-soft);
+      }
+    }
+
+    &.mat-form-field-disabled {
+      .mat-mdc-text-field-wrapper {
+        background-color: var(--color-surface-soft);
+        box-shadow: none;
+      }
+
+      .autocomplete__clear {
+        color: var(--color-text-disabled);
+        cursor: default;
+      }
+    }
+
+    &.mat-form-field-invalid {
+      .mat-mdc-text-field-wrapper {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .autocomplete-panel.mat-mdc-autocomplete-panel {
+    margin-top: vars.$size-xs;
+    padding: vars.$size-sm;
+    border: 1px solid var(--color-border-soft);
+  }
+
+  .autocomplete-panel .mat-mdc-option {
+    @include type.text-sm;
+
+    min-height: fn.pxToRem(44);
+    padding: 0 vars.$size-md;
+    border-radius: vars.$radius-lg;
+    color: var(--color-text-primary);
+    transition:
+      background-color vars.$transition-fast,
+      color vars.$transition-fast;
+  }
+
+  .autocomplete-panel .mat-mdc-option:hover:not(.mdc-list-item--disabled),
+  .autocomplete-panel .mat-mdc-option.mat-mdc-option-active:not(.mdc-list-item--disabled) {
+    background-color: var(--color-neutral-100);
+    color: var(--color-heading);
+  }
+
+  .autocomplete-panel .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) {
+    background-color: var(--color-success-soft);
+    color: var(--color-success);
+  }
+
+  .autocomplete-panel .mat-mdc-option.mdc-list-item--disabled {
+    color: var(--color-text-muted);
+    opacity: 1;
+  }
+
+  .autocomplete-panel .mdc-list-item__primary-text {
+    color: inherit;
+  }
+}

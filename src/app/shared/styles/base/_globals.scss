@@ -3,6 +3,11 @@
 @use 'abstracts/typography' as typography;
 @use 'abstracts/mixins' as mixins;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 html {
   font-size: calc(#{constants.$root-font-size} / 16 * 100%);
   scroll-behavior: smooth;

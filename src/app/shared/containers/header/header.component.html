@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="header__logo">
+    <ng-content select="[logo]"></ng-content>
+  </div>
+  <div class="header__content">
+    <app-autocomplete
+      [placeholder]="'Search for tasks, projects, or users...'"
+      [items]="searchItems"
+      (selectionChange)="handleSearchOptionSelect($event)"
+    />
+  </div>
+  <div class="header__profile">
+    <app-avatar
+      size="sm"
+      name="Vikas Phulriya"
+      [onClick]="handleProfileClick"
+      title="This is avatar"
+    />
+  </div>
+</header>

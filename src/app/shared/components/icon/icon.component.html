@@ -1,0 +1,9 @@
+<span
+  [class]="hostClasses()"
+  [matTooltip]="tooltipText() ?? ''"
+  [matTooltipDisabled]="!tooltipText()"
+  [style.--icon-rotation]="rotationStyle()"
+  aria-hidden="true"
+>
+  <svg class="icon__svg" [lucideIcon]="icon()" [size]="pixelSize()"></svg>
+</span>

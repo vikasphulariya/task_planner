@@ -1,0 +1,47 @@
+<mat-form-field class="autocomplete" appearance="outline" subscriptSizing="dynamic">
+  @if (label()) {
+    <mat-label>{{ label() }}</mat-label>
+  }
+
+  <app-icon class="autocomplete__prefix" matPrefix name="search" size="md" color="text-muted" />
+
+  <input
+    class="autocomplete__input"
+    type="text"
+    matInput
+    [placeholder]="placeholder()"
+    [formControl]="control"
+    [matAutocomplete]="auto"
+    [disabled]="disabled()"
+    (input)="handleInputChange()"
+  />
+
+  @if (clearable() && control.value) {
+    <button
+      class="autocomplete__clear"
+      type="button"
+      matSuffix
+      aria-label="Clear autocomplete"
+      (click)="clear()"
+    >
+      ✕
+    </button>
+  }
+
+  <mat-autocomplete
+    class="autocomplete-panel"
+    #auto="matAutocomplete"
+    [displayWith]="displayWith"
+    (optionSelected)="handleOptionSelect($event.option.value)"
+  >
+    @for (item of filteredItems(); track item.value) {
+      <mat-option [value]="item">
+        {{ item.label }}
+      </mat-option>
+    } @empty {
+      <mat-option disabled>
+        {{ emptyText() }}
+      </mat-option>
+    }
+  </mat-autocomplete>
+</mat-form-field>
