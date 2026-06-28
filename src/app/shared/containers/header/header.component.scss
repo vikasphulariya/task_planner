@@ -1,0 +1,12 @@
+@use 'abstracts' as shared;
+
+.header {
+  @include shared.flex(row, space-between, center, shared.pxToRem(16));
+
+  width: 100%;
+  height: shared.pxToRem(64);
+  padding: 0 shared.pxToRem(16);
+  z-index: shared.$z-header;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-elevation-1);
+}

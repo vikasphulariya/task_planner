@@ -24,6 +24,8 @@ $shadow-card: 0 fn.pxToRem(4) fn.pxToRem(8) rgb(6 3 21 / 8%);
 $transition-fast: 150ms ease;
 $transition-base: 200ms ease;
 
+$z-header: 100;
+$z-sidebar: 200;
 $z-dropdown: 1000;
 $z-sticky: 1020;
 $z-fixed: 1030;

@@ -1,0 +1,19 @@
+<div
+  [class]="'avatar ' + sizeClass()"
+  [class.avatar--clickable]="isClickable()"
+  [matTooltip]="tooltip() ?? ''"
+  [matTooltipDisabled]="!tooltip()"
+  [attr.role]="isClickable() ? 'button' : null"
+  [attr.tabindex]="isClickable() ? 0 : null"
+  [attr.aria-label]="name()"
+  (click)="handleClick()"
+  (keydown)="handleKeyDown($event)"
+>
+  @if (hasImage()) {
+    <img class="avatar__image" [src]="src()" [alt]="name()" />
+  } @else {
+    <span class="avatar__initials">
+      {{ initials() }}
+    </span>
+  }
+</div>
