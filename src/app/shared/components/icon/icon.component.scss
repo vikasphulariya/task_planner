@@ -1,0 +1,135 @@
+@use 'abstracts' as shared;
+
+.icon {
+  --icon-color: var(--color-text-primary);
+  --icon-soft-bg: transparent;
+  --icon-filled-color: var(--color-surface);
+  --icon-outline-color: var(--icon-color);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  color: var(--icon-color);
+  vertical-align: middle;
+  transition:
+    color shared.$transition-fast,
+    background-color shared.$transition-fast,
+    border-color shared.$transition-fast,
+    opacity shared.$transition-fast,
+    transform shared.$transition-fast;
+}
+
+.icon--sm {
+  width: shared.pxToRem(16);
+  height: shared.pxToRem(16);
+}
+
+.icon--md {
+  width: shared.pxToRem(20);
+  height: shared.pxToRem(20);
+}
+
+.icon--lg {
+  width: shared.pxToRem(24);
+  height: shared.pxToRem(24);
+}
+
+.icon--plain {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.icon--outlined {
+  border: 1px solid var(--icon-outline-color);
+  border-radius: shared.$radius-md;
+  background-color: transparent;
+  padding: 0;
+}
+
+.icon--filled {
+  border: none;
+  border-radius: shared.$radius-md;
+  background-color: var(--icon-color);
+  color: var(--icon-filled-color);
+  padding: 0;
+}
+
+.icon--circle {
+  border: none;
+  border-radius: 50%;
+  background-color: var(--icon-soft-bg);
+  padding: 0;
+}
+
+.icon--disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.icon--primary {
+  --icon-color: var(--color-primary);
+  --icon-soft-bg: var(--color-primary-soft);
+}
+
+.icon--success {
+  --icon-color: var(--color-success);
+  --icon-soft-bg: var(--color-success-soft);
+}
+
+.icon--danger {
+  --icon-color: var(--color-danger);
+  --icon-soft-bg: var(--color-danger-soft);
+}
+
+.icon--warning {
+  --icon-color: var(--color-warning);
+  --icon-soft-bg: var(--color-warning-soft);
+}
+
+.icon--info {
+  --icon-color: var(--color-info);
+  --icon-soft-bg: var(--color-info-soft);
+}
+
+.icon--purple {
+  --icon-color: var(--color-purple);
+  --icon-soft-bg: var(--color-purple-soft);
+}
+
+.icon--heading {
+  --icon-color: var(--color-heading);
+  --icon-soft-bg: var(--color-border-soft);
+}
+
+.icon--text-primary {
+  --icon-color: var(--color-text-primary);
+  --icon-soft-bg: var(--color-border-soft);
+}
+
+.icon--text-secondary {
+  --icon-color: var(--color-text-secondary);
+  --icon-soft-bg: var(--color-border-soft);
+}
+
+.icon--text-muted {
+  --icon-color: var(--color-text-muted);
+  --icon-soft-bg: var(--color-border-soft);
+}
+
+.icon--neutral {
+  --icon-color: var(--color-neutral-600);
+  --icon-soft-bg: var(--color-neutral-200);
+}
+
+.icon__svg {
+  display: block;
+  flex-shrink: 0;
+  transform: var(--icon-rotation, rotate(0deg));
+  transform-origin: center;
+  transition: transform shared.$transition-fast;
+}
+
+/* TODO: Migrate theme tokens from --color-* to --app-color-* once the global design-token namespace is updated. */

@@ -3,7 +3,11 @@
     <ng-content select="[logo]"></ng-content>
   </div>
   <div class="header__content">
-    <ng-content select="[content]"></ng-content>
+    <app-autocomplete
+      [placeholder]="'Search for tasks, projects, or users...'"
+      [items]="searchItems"
+      (selectionChange)="handleSearchOptionSelect($event)"
+    />
   </div>
   <div class="header__profile">
     <app-avatar
